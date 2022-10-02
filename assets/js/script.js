@@ -15,6 +15,12 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     } 
 
+    document,this.getElementById("answer-box").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            checkAnswer()
+        }
+    })
+
     runGame("addition");
 })
 
@@ -23,7 +29,10 @@ document.addEventListener("DOMContentLoaded", function() {
  * and afgter the user's answer has been processed
  */
 
-function runGame(gameType) {
+function runGame(gameType) { 
+
+    document.getElementById("answer-box").value = "";
+    document.getElementById("answer-box").focus();
 
     // Creates two random numbers between 1 and 30
 
